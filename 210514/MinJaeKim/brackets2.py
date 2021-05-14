@@ -1,6 +1,7 @@
 import sys; input= lambda: sys.stdin.readline().rstrip()
-for _ in range(int(input())):
-    s= input()
+t= int(input())
+for _ in range(t):
+    s= list(input())
     stc=[]
     flag=False
     for el in s:
@@ -11,11 +12,14 @@ for _ in range(int(input())):
         elif el=='[':
             stc.append(']')
         else:
+            if not stc:
+                flag=True
+                break
             ths=stc.pop()
             if ths!=el:
                 flag=True
                 break
-    if flag:
+    if flag or stc:
         print('NO')
     else:
         print('YES')

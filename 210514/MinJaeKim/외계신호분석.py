@@ -5,7 +5,7 @@ def sgn(prv):
     if prv==-1:
         return 1983
     else:
-        ths= (prv* 214013 + 2531011)%2**32
+        ths= (prv* 214013 + 2531011)%(2**32)
         return ths%10000 +1
 
 for _ in range(int(input())):
